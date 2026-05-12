@@ -29,5 +29,14 @@ public class SquareTests {
         Assertions.assertEquals(12.5,new Triangle(3.2,5.1,4.2).perimeterTri());
 
     }
+    @Test
+    void cannotCreateWithNegativeSide() {
+        try {
+            new Square(-5.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception) {
+            //ok
+        }
 
+    }
 }
