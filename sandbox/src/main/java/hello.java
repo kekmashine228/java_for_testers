@@ -2,15 +2,25 @@ import java.io.File;
 
 public class hello {
     static void main(String[] args) {
-        System.out.println("hello");
+        try {
+            var z = calculate();
+            System.out.println(z);
+            System.out.println("hello");
+        } catch (ArithmeticException exception){
+            exception.printStackTrace();
+        }
 
-        System.out.println(2 + 2);
-        System.out.println(2 - 2);
-        System.out.println(2 * 2);
-        System.out.println(2 / 2);
+    }
 
-        var configFile = new File("sandbox/build.gradle");
-        System.out.println(configFile.getAbsolutePath());
-        System.out.println(configFile.exists());
+    private static int calculate() {
+        var x = 1;
+        var y = 1;
+        var z = divide(x, y);
+        return z;
+    }
+
+    private static int divide(int x, int y) {
+        var z = x / y;
+        return z;
     }
 }
